@@ -1,3 +1,4 @@
+import React from "react";
 import logo from './../resource/logo.svg';
 import './Body.css';
 import Test from './../component/lotto/Test';
