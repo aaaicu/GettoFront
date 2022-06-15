@@ -6,8 +6,8 @@
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  margin-left: 5vh;
-  margin-right: 5vh;
+  margin-left: 2vh;
+  margin-right: 2vh;
   color: white;
   border-radius: 15px;
 }
