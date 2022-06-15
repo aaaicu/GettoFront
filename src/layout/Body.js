@@ -1,4 +1,3 @@
-import React from "react";
 import './Body.css';
 import GameBoard from "../component/lotto/GameBoard";
 import HistoryBoard from "../component/lotto/HistoryBoard";
