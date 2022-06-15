@@ -1,6 +1,6 @@
 .GameBoard {
   background-color: #bcd8fa;
-  min-height: 25vh;
+  min-height: 40vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -8,6 +8,7 @@
   font-size: calc(10px + 2vmin);
   margin-left: 2vh;
   margin-right: 2vh;
+  margin-bottom: 2vh;
   color: white;
   border-radius: 15px;
 }
