@@ -4,7 +4,7 @@ import './GameBoard.css';
 function GameBoard() {
   return (
     <div className="GameBoard">
-        Game Board
+        Game Board test
     </div>
   );
 }
