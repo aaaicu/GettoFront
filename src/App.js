@@ -1,18 +1,18 @@
 import React from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import './App.css';
-import Body from './layout/Body';
-import Footer from './layout/Footer';
-import Header from './layout/Header';
-import Nav from './layout/Nav';
+import Home from "./page/home/Home";
+import KakaoAuthHandler from "./page/oauth/kakao/KakaoAuthHandler";
 
 function App() {
   return (
-    <div className="App">
-      <Header/>
-      <Nav/> 
-      <Body/>
-      <Footer/>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home/>}/>
+        {/* <Route path="/oauth/kakao" element={<KakaoAuthHandler/>}/> */}
+        <Route path="/callback/kakao" element={<KakaoAuthHandler/>}/>
+      </Routes>
+    </BrowserRouter>
   );
 }
 
