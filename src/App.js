@@ -9,7 +9,7 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Home/>}/>
-        {/* <Route path="/oauth/kakao" element={<KakaoAuthHandler/>}/> */}
+        <Route path="/test" element={<div>test!!</div>}/>
         <Route path="/callback/kakao" element={<KakaoAuthHandler/>}/>
       </Routes>
     </BrowserRouter>
