@@ -5,7 +5,6 @@ function Header() {
   return (
     <div className="Header">
         GETTO
-
     <KakaoLonginBtn/>
     </div>
   );
