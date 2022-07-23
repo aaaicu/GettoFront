@@ -18,7 +18,6 @@ function KakaoAuthHandler() {
   const deleteToken = function() {
     dispatch(SET_LOGOUT());
     axios.defaults.headers.common['Authorization'] = '';
-    return navigate("/");
   };
 
     return (
