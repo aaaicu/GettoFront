@@ -12,7 +12,6 @@ export const tokenSlice = createSlice({
         expireTime: null
     },
     reducers: {
-        // SET_TOKEN: (state, action) => {
         SET_LOGIN: (state, action) => {
             state.authenticated = true;
             state.nickname = action.payload.nickname;

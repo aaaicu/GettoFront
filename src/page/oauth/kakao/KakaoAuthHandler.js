@@ -1,8 +1,9 @@
-import axios from "axios";
 import { API_HOST } from "../../../component/oauth/OAuthUrl";
 import { useNavigate } from 'react-router';
 import { useDispatch } from 'react-redux';
 import { SET_LOGIN, SET_LOGOUT } from '../../../component/oauth/Auth';
+import { api } from "../../../component/CustomAxios";
+import axios from "axios";
 
 
 function KakaoAuthHandler() {
@@ -11,13 +12,13 @@ function KakaoAuthHandler() {
 
   const saveToken = function(data) {
     dispatch(SET_LOGIN(data));
-    axios.defaults.headers.common['Authorization'] = `Bearer ${data.accessToken}`;
+    api.defaults.headers.common['Authorization'] = `Bearer ${data.accessToken}`;
     return navigate("/");
   };
 
   const deleteToken = function() {
     dispatch(SET_LOGOUT());
-    axios.defaults.headers.common['Authorization'] = '';
+    // axios.defaults.headers.common['Authorization'] = '';
   };
 
     return (
@@ -35,7 +36,9 @@ let callback = function (successCallbackFunc, failCallbackFunc){
   if(code==null || code === ""){
     return failCallbackFunc();
   }
-  axios.get( `${API_HOST}/oauth/kakao?code=${code}`)
+
+
+  axios.get(`${API_HOST}/oauth/kakao?code=${code}`)
   .then((res) =>{
     successCallbackFunc(res.data);
   })

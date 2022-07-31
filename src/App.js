@@ -4,12 +4,10 @@ import './App.css';
 import Home from "./page/home/Home";
 import Test from "./page/Test";
 import KakaoAuthHandler from "./page/oauth/kakao/KakaoAuthHandler";
-import { API_HOST } from "./component/oauth/OAuthUrl";
-import axios from "axios";
 
-axios.defaults.headers.common['Content-Type'] = 'application/json';
-axios.defaults.baseURL = API_HOST;
-axios.defaults.withCredentials = true;
+// axios.defaults.headers.common['Content-Type'] = 'application/json';
+// axios.defaults.baseURL = API_HOST;
+// axios.defaults.withCredentials = true;
 
 function App() {
   return (
