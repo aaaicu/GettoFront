@@ -6,19 +6,21 @@ import { api } from "../../../component/CustomAxios";
 import axios from "axios";
 
 
+
 function KakaoAuthHandler() {
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
   const saveToken = function(data) {
     dispatch(SET_LOGIN(data));
+    localStorage.setItem('refreshToken', data.refreshToken)
     api.defaults.headers.common['Authorization'] = `Bearer ${data.accessToken}`;
     return navigate("/");
   };
 
   const deleteToken = function() {
     dispatch(SET_LOGOUT());
-    // axios.defaults.headers.common['Authorization'] = '';
+    axios.defaults.headers.common['Authorization'] = null;
   };
 
     return (

@@ -12,7 +12,7 @@ function KakaoLonginBtn() {
 
     const logout = function() {
         dispatch(SET_LOGOUT());
-        axios.defaults.headers.common['Authorization'] = '';
+        axios.defaults.headers.common['Authorization'] = null;
       };
 
     const goLogin = function() {

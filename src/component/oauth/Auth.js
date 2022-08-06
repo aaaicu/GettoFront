@@ -6,7 +6,6 @@ export const tokenSlice = createSlice({
     name: 'profile',
     initialState: {
         authenticated: false,
-        // accessToken: null,
         nickname: null,
         thumbnailImageUrl: null,
         expireTime: null
