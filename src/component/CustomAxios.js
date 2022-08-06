@@ -1,8 +1,5 @@
 import { API_HOST, PRD_API_HOST } from "./oauth/OAuthUrl";
 import axios from "axios";
-import { useDispatch } from "react-redux";
-import { useNavigate } from 'react-router';
-import { SET_LOGIN } from "./oauth/Auth";
 
 export const api = axios.create({baseURL: process.env.NODE_ENV === 'production'? `${PRD_API_HOST}` :`${API_HOST}`});
 export const defaultApi = axios.create({baseURL: process.env.NODE_ENV === 'production'? `${PRD_API_HOST}` :`${API_HOST}`});
