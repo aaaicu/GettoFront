@@ -2,8 +2,8 @@ import { API_HOST } from "../../../component/oauth/OAuthUrl";
 import { useNavigate } from 'react-router';
 import { useDispatch } from 'react-redux';
 import { SET_LOGIN, SET_LOGOUT } from '../../../component/oauth/Auth';
-import { api } from "../../../component/CustomAxios";
 import axios from "axios";
+import { api } from "../../../common/axios/customAxios";
 
 
 

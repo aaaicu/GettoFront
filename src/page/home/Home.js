@@ -3,8 +3,8 @@ import Body from '../../layout/Body';
 import Footer from '../../layout/Footer';
 import Nav from '../../layout/Nav';
 import { useDispatch } from 'react-redux';
-import { api } from '../../component/CustomAxios';
 import { SET_LOGIN } from '../../component/oauth/Auth';
+import { api } from '../../common/axios/customAxios';
 
 function Home() {
     const dispatch = useDispatch();
@@ -15,14 +15,11 @@ function Home() {
             dispatch(SET_LOGIN(res.data));
             localStorage.setItem('refreshToken', res.data.refreshToken)
         });
-        
-        
     }
     const test1 = async () => {
-        api.get('/api/hello').then();
+        api.get('/api/hello').then((res) =>  console.log(res));
     }
 
-    console.log(api.defaults.headers.common);
     return (
         <div className="App">
             <Header/> 

@@ -3,8 +3,8 @@ import {KAKAO_AUTH_URL} from "./OAuthUrl"
 import kakao_login from '../../resource/image/kakao_login.png';
 import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
-import axios from "axios";
 import { SET_LOGOUT } from './Auth';
+import { api } from '../../common/axios/customAxios';
 
 function KakaoLonginBtn() {
     const profile = useSelector(state => state.profile);
@@ -12,7 +12,8 @@ function KakaoLonginBtn() {
 
     const logout = function() {
         dispatch(SET_LOGOUT());
-        axios.defaults.headers.common['Authorization'] = null;
+        api.defaults.headers.common['Authorization'] = null;
+        localStorage.clear();
       };
 
     const goLogin = function() {
