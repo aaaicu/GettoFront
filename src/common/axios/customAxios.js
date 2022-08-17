@@ -6,46 +6,39 @@ export const defaultApi = axios.create({baseURL: process.env.NODE_ENV === 'produ
 
 
 api.interceptors.request.use(function(config){
-  // if(!api.defaults.headers.common['Authorization']){
-  //   reissueAccessToken(localStorage.getItem('refreshToken') );
-  // }
-
-  // console.log('request => config ====================================');
-  // console.log(config);
-  // console.log(api.defaults.headers.common['Authorization']);
   return config;
 }, function(error) {
   return Promise.reject(error);
 });
 
 api.interceptors.response.use(
-  // function(config){
-  //   // console.log('response => config ====================================');
-  //   // console.log(config);
-  //   // console.log('response => config ====================================');
-  //   return config;
-  // }
   null, 
   function(error) {
   // access token  재발급하여 재요청
-  const result = retryReissueAccessToken(localStorage.getItem('refreshToken'), error);
-  return Promise.resolve(result);
+  if(error.response.status === 403 || error.response.status === 401 ){
+    const result = retryReissueAccessToken(localStorage.getItem('refreshToken'), error);
+
+    result.catch(function(error) {
+      console.log(error);
+      window.location.href = '/logout';
+    });
+    return Promise.resolve(result); 
+  }
 });
 
 
 const retryReissueAccessToken = async function(refreshToken, error){ 
+  console.log('=========== retry ============');
   const res = await defaultApi.get('/auth/reissue?refreshToken='+ refreshToken);
-  localStorage.setItem('refreshToken', res.data.refreshToken);
-  api.defaults.headers.common['Authorization'] = `Bearer ${res.data.accessToken}`;
+  await resetToken(res.data.refreshToken, res.data.accessToken);
   const data = await api.request(error.config);
 
   return Promise.resolve(data);
+}
 
-  // defaultApi.get('/auth/reissue?refreshToken='+ refreshToken).then((res) =>{
-  //   localStorage.setItem('refreshToken', res.data.refreshToken)
-  //   api.defaults.headers.common['Authorization'] = `Bearer ${res.data.accessToken}`;
-  // }).catch(function (error) {
-  //   return Promise.reject(error);
-  // });
+const resetToken = async function (refreshToken, accessToken){
+  localStorage.setItem('refreshToken', refreshToken);
+  api.defaults.headers.common['Authorization'] = `Bearer ${accessToken}`;
+  console.log('=========== retry ============');
 }
 
