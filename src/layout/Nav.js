@@ -1,8 +1,7 @@
 import { useEffect, useState } from 'react';
 import { api } from '../common/axios/customAxios';
 import BallContainer from '../component/lotto/BallContainer';
-import Notice from '../component/lotto/Notice';
-import './Nav.css';
+import './Nav.scss';
 
 
 function Nav() {
@@ -21,10 +20,13 @@ function Nav() {
 
   return (
     <div className="Nav">
-      <Notice />
-      <div className='Menu'>
-      버튼 | 영역 | 목록 | 짠
-      
+      {/* <Notice /> */}
+      <div className="Menu">
+      <ul>
+        <li>홈</li>
+        <li>공지사항</li>
+        <li>나의 번호</li>
+      </ul>
       </div>
       <BallContainer luckyNumber = {luckyNumber}/>
     </div>

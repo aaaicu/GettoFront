@@ -1,0 +1,18 @@
+.Nav {
+  display: flex;
+  flex-direction: column;
+  }
+
+.Menu {
+    font-size: 18px;
+    ul{
+      margin: 0px;
+      padding: 0px;
+      text-align: center;
+    }
+    li{
+      margin-right: 25px;
+      list-style: none;
+      display: inline-block;
+    }
+}
