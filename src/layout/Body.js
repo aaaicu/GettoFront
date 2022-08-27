@@ -6,13 +6,7 @@ function Body() {
   return (
     <div className="Body">
     <GameBoard />
-    <div>
-      <HistoryBoard />
-    </div>
-
-
-    Body !
-    ~
+    <HistoryBoard />
     </div>
   );
 }
