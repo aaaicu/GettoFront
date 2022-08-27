@@ -28,7 +28,7 @@ function KakaoLonginBtn() {
     }
     
     return (
-        <div className=''>
+        <div className='buttonArea'>
             {buttonImage}
         </div>
     );

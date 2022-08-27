@@ -5,8 +5,17 @@
 }
 
 .kakao_profile{
-    height: 10vh;
-    width: 10vh;
+    height: 6vh;
+    width: 6vh;
     object-fit: cover;
     border-radius: 50%;
+}
+
+.buttonArea{
+    height: 7vh;
+    width: 10vh;
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 5px;
 }

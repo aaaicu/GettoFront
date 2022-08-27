@@ -1,5 +1,7 @@
 import { useEffect, useState } from 'react';
 import { api } from '../common/axios/customAxios';
+import Ball from '../component/lotto/Ball';
+import BallContainer from '../component/lotto/BallContainer';
 import Notice from '../component/lotto/Notice';
 import './Nav.css';
 
@@ -26,12 +28,7 @@ function Nav() {
       버튼 | 영역 | 목록 | 짠
       
       </div>
-      <div>
-      {luckyNumber.round} 회차 ({luckyNumber.createdAt})
-      </div>
-      <div>
-      {luckyNumber.number1}, {luckyNumber.number2}, {luckyNumber.number3}, {luckyNumber.number4}, {luckyNumber.number5}, {luckyNumber.number6} + {luckyNumber.bonus}
-      </div>
+      <BallContainer luckyNumber = {luckyNumber}/>
     </div>
   );
 }

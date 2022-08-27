@@ -1,0 +1,52 @@
+.BallBoard {
+  background-color: cadetblue;
+  height : 70px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.BallContainer {
+    background-color: cadetblue;
+    height : 70px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+  }
+
+.LottoBall {
+  width : 40px;
+  height : 40px;
+  border-radius: 50%;
+  text-align: center;
+  display : flex;
+  justify-content : center;
+  align-items : center;
+}
+
+.item{
+  margin-left: 1px;
+  margin-right: 1px;
+}
+
+.yellow{
+  background-color: rgb(255, 255, 96);
+}
+
+.blue{
+  background-color: rgb(42, 113, 227);
+}
+
+.red{
+  background-color: rgb(255, 79, 79);
+}
+
+.gray{
+  background-color: rgb(212, 212, 212);
+}
+
+.green{
+  background-color: rgb(63, 202, 63);
+}
