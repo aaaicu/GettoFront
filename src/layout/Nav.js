@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react';
 import { api } from '../common/axios/customAxios';
-import Ball from '../component/lotto/Ball';
 import BallContainer from '../component/lotto/BallContainer';
 import Notice from '../component/lotto/Notice';
 import './Nav.css';
@@ -9,7 +8,6 @@ import './Nav.css';
 function Nav() {
   const [ luckyNumber, setLuckyNumber ] = useState([]); 
 
-  const data = {};
   useEffect(()=> {
     async function fetchData() {
       const getLuckyNumber = await api.get('/api/last/lucky-number');
