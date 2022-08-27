@@ -8,6 +8,7 @@ function GameBoard() {
         const speed = 12; // thanks to @pixelass for this
         let currValue;
         let rafID;
+        let initialX;
     
     // // set min/max value
     inputRange.min = 0;
@@ -22,6 +23,28 @@ function GameBoard() {
         
         // set to desired value
         currValue = +this.value;
+    }
+
+    // // listen for unlock
+    function unlockTouchStartHandler(e) {
+    
+        // clear raf if trying again
+        window.cancelAnimationFrame(rafID);
+        
+        // set to desired value
+        currValue = +this.value;
+        initialX = `${e.touches ? e.touches[0].clientX : e.clientX}`;
+    }
+    
+    function unlockMoveHandler(e){
+        if (initialX !== null) {
+            const currentX = `${e.touches ? e.touches[0].clientX : e.clientX}`;
+            let diffX = initialX - currentX;
+
+            currValue =- diffX;
+            inputRange.value = currValue;
+        }
+
     }
     
     function unlockEndHandler() {
@@ -66,7 +89,8 @@ function GameBoard() {
         inputRange.addEventListener('mousedown', unlockStartHandler, false);
         inputRange.addEventListener('mouseup', unlockEndHandler, false);
         inputRange.addEventListener('touchend', unlockEndHandler, false);
-        inputRange.addEventListener('touchstart', unlockStartHandler, false);
+        inputRange.addEventListener('touchstart', unlockTouchStartHandler, false);
+        inputRange.addEventListener('touchmove', unlockMoveHandler, false);
       }, [])
       
 
