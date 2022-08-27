@@ -27,12 +27,6 @@ function GameBoard() {
 
     // // listen for unlock
     function unlockTouchStartHandler(e) {
-    
-        // clear raf if trying again
-        window.cancelAnimationFrame(rafID);
-        
-        // set to desired value
-        currValue = +this.value;
         initialX = `${e.touches ? e.touches[0].clientX : e.clientX}`;
     }
     
