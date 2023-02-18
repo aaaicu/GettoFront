@@ -1,0 +1,166 @@
+@font-face {
+  font-family: "BMJUA";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/BMJUA.woff")
+      format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@keyframes done {
+  70% {
+      transform: scale(1.2);
+  }
+  100% {
+      transform: scale(1);
+  }
+}
+
+html {
+  font-family: BMJUA;
+}
+
+html,
+body,
+#root {
+  min-height: 100vh;
+}
+
+*,
+::before,
+::after {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body,
+div,
+button,
+h1 {
+  font: inherit;
+  padding: 0;
+  margin: 0;
+  border: 0;
+  outline: 0;
+  background: 0;
+}
+
+#title {
+  font-size: 3rem;
+  margin: 2rem 0;
+}
+
+
+#numbers {
+  display: flex;
+  margin-bottom: 20px;
+  padding: 30px;
+  border: 3px solid pink;
+  background-color: white;
+  border-radius: 20px;
+  align-items: center;
+  flex-direction: column;
+}
+
+#numbers .ball {
+  width: 80px;
+  height: 80px;
+  margin-bottom: 10px;
+  line-height: 80px;
+  font-size: 48px;
+  border-radius: 50%;
+  text-align: center;
+}
+
+#numbers .ball:last-child {
+  margin-bottom: 0;
+}
+
+#numbers .ball.blue {
+  background: #4db8ff;
+}
+
+#numbers .ball.red {
+  background: #ff7272;
+}
+
+#numbers .ball.green {
+  background: #7dd840;
+}
+
+#numbers .ball.purple {
+  background: #d040d8;
+}
+
+
+#numbers .ball.yello {
+  background: #ecdb19;
+}
+
+#numbers .ball.grey {
+  background: #aaa;
+}
+
+#numbers .ball.bonus {
+  background: #b0d840;
+}
+
+#numbers .ball.done {
+  animation: done 0.3s linear;
+}
+
+#numbers .ball:last-child {
+  margin-right: 0;
+}
+
+#numbers .plus {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 20px;
+  font-size: 48px;
+  font-weight: bold;
+  margin: 0 0 10px 0;
+}
+
+#numbers {
+  width: 330px;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+@media screen and (min-width: 335px) {
+  #numbers {
+      width: 330px;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: center;
+  }
+
+  #numbers .ball {
+      margin-right: 10px;
+  }
+
+  #numbers .ball:nth-of-type(3n) {
+      margin-right: 0;
+  }
+
+  #numbers .plus {
+      width: 100%;
+  }
+}
+
+@media screen and (min-width: 800px) {
+  #numbers {
+      width: auto;
+  }
+  #numbers .ball,
+  #numbers .ball:nth-of-type(3n) {
+      margin-right: 10px;
+      margin-bottom: 0;
+  }
+
+  #numbers .plus {
+      width: auto;
+      margin: 0 10px 0 0;
+  }
+}

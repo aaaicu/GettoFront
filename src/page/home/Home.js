@@ -23,11 +23,15 @@ function Home() {
     return (
         <div className="App">
             <Header/> 
-            <Nav/> 
+            {/* <Nav/>  */}
             <Body/>
             <Footer/>
-            <button onClick={ test}>sss</button>
-            <button onClick={ test1}>test</button>
+
+            <script>
+            /* 참고소스 : https://github.com/marshallku/React-Lottery-App */
+            </script>
+            {/* <button onClick={ test}>sss</button>
+            <button onClick={ test1}>test</button> */}
         </div>
     )
 }

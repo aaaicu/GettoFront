@@ -3,7 +3,7 @@ import './Footer.css';
 function Footer() {
   return (
     <div className="Footer">
-        Footer
+        made by Jaehyun
     </div>
   );
 }

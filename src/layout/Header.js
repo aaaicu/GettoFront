@@ -1,11 +1,11 @@
 import './Header.css';
-import KakaoLonginBtn from '../component/oauth/KakaoLoginBtn';
+// import KakaoLonginBtn from '../component/oauth/KakaoLoginBtn';
 
 function Header() {
   return (
     <div className="Header">
-        GETTO
-    <KakaoLonginBtn/>
+        돈암동교회 청년부
+    {/* <KakaoLonginBtn/> */}
     </div>
   );
 }

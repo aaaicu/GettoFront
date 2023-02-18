@@ -1,5 +1,5 @@
 .GameBoard {
-  background-color: #bcd8fa;
+  background-color: #fbffe4;
   flex-direction: column;
   align-items: center;
   justify-content: center;
@@ -7,6 +7,9 @@
   margin-left: 1vw;
   margin-right: 1vw;
   margin-bottom: 1vh;
+
+  padding-top: 15px;
+  padding-bottom: 40px;
   color: rgb(0, 0, 0);
   border-radius: 15px;
   display: flex;
@@ -77,7 +80,7 @@
 }
 
 .pullee {
-    background-color: #bcd8fa;
+    background-color: #bcd8fa00;
 
     width: 10rem;
     appearance: none;
@@ -102,7 +105,7 @@
         width: 1rem;
         height: 1rem;
         border-radius: 50%;
-        background: #5990DD;
+        background: #dd5999;
         transform-origin: 50% 50%;
         transform: scale(1);
         transition: transform ease-out 100ms;

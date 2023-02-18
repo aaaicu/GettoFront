@@ -1,8 +1,10 @@
 .Header {
-    min-height: 7vh;
+    display:flex;
+    align-items: center; 
+    justify-content: center;
+    min-height: 70px;
     background-color: #131329;
-    font-size: calc(15px + 2vmin);
-    padding-top: 1vh;
+    font-size: calc(30px);
     color: white;
     position: relative;
   }
