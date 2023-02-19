@@ -92,7 +92,7 @@ function PlayButton(props){
 
   return (
     <div className="StartContainer">
-        <h1 id="btn" className={` ${!props.decrypting &&  "hide"} `}>당첨번호 추첨 중에요</h1>
+        <h1 id="btn" className={` ${!props.decrypting &&  "hide"} `}>당첨번호 추첨 중이에요</h1>
         <input id="btn"   type="range" className={`pullee ${props.decrypting &&  "hide"} `} />
     </div>
   );
