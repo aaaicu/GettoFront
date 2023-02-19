@@ -6,12 +6,20 @@ const numbers = [...Array(20).keys()];
 
 class PlayBoard extends React.Component{
 
+    constructor(props) {
+        super(props);
+        this.state.effect = false
+    }
+
+
     state = { number: [0, 0, 0, 0, 0, 0] };
     randomize = () => {
         if (!this.state.effect) {
             const numberCopy = numbers.map((x) => x);
+            numberCopy.sort(() => Math.random() - 0.5);
+            
             const arr = [];
-            for (let i = 0; i <= 5; i++) {
+            for (let i = 0; i < 6; i++) {
                 const random = Math.ceil(
                     Math.random() * (numberCopy.length - 1)
                 );
@@ -74,12 +82,8 @@ class PlayBoard extends React.Component{
                 <div>
                     <PlayButton
                         decrypting={this.state.effect}
-                        run={this.randomize}
+                        run={this.randomize}    
                     />
-                    {/* <StartButton
-                        decrypting={this.state.effect}
-                        run={this.randomize}
-                    /> */}
                 </div>
             </React.Fragment>
         );

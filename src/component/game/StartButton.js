@@ -1,5 +1,4 @@
 import React from "react";
-// import './GameBoard.scss';
 
 class StartButton extends React.Component {
     render() {

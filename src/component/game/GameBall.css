@@ -163,4 +163,8 @@ h1 {
       width: auto;
       margin: 0 10px 0 0;
   }
+
+  #btn.hide {
+    display: none;
+  } 
 }

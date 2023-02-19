@@ -1,6 +1,6 @@
 
 import React, { useEffect } from "react";
-// import './GameBoard.scss';
+import './PlayButton.css';
 
 
 function PlayButton(props){
@@ -92,7 +92,8 @@ function PlayButton(props){
 
   return (
     <div className="StartContainer">
-        <input id="btn" type="range" className="pullee" />
+        <h1 id="btn" className={`${!props.decrypting &&  "hide"} `}>당첨번호 추첨 중에요</h1>
+        <input id="btn"   type="range" className={`pullee ${props.decrypting &&  "hide"} `} />
     </div>
   );
 }
