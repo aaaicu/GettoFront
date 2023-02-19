@@ -5,3 +5,8 @@
   align-items: center;
   justify-content: center;
 }
+
+
+#btn.hide {
+  display: none;
+} 
